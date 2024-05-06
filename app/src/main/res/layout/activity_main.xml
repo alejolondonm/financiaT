@@ -1,22 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal|center_vertical"
     android:layout_weight=".1"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <TextView
+        android:id="@+id/text_bienvenido"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:text="Bienvenido"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_financiaT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestiona tus finanzas en financiaT"
+        android:textAlignment="center"
+        android:textColor="#F79E1B"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="328dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_red"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="60dp"
+                android:text="Ingresos"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_ingresos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="38dp"
+                android:text="$0"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bg_orange"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/txt_gastos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="38dp"
+                android:text="$0"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="60dp"
+                android:text="Gastos"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/btn_ir"
-        android:layout_width="207dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="24dp"
-        android:text="Ir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/btn_ir_creditos"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#F79E1B"
+        android:elevation="10dp"
+        android:text="Créditos"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

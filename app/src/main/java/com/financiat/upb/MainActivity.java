@@ -2,9 +2,9 @@ package com.financiat.upb;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +14,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_ir;
+    private Button btn_ir_creditos;
     private Datos datos;
+
+    private TextView txt_ingresos;
+    private TextView txt_gastos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +31,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         datos = (Datos) this.getApplication();
-        btn_ir = findViewById(R.id.btn_ir);
-        btn_ir.setOnClickListener(new View.OnClickListener() {
+        txt_ingresos = findViewById(R.id.txt_ingresos);
+        txt_gastos = findViewById(R.id.txt_gastos);
+
+        txt_ingresos.setText(datos.getIngresos());
+        txt_gastos.setText(datos.getGastos());
+        btn_ir_creditos = findViewById(R.id.btn_ir_creditos);
+        btn_ir_creditos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent siguiente = new Intent(MainActivity.this, MainActivity2.class);
