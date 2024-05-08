@@ -91,8 +91,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_ir_gastos"
             android:layout_width="80dp"
             android:layout_height="120dp"
+            android:onClick="@{handleFrameClick}"
             android:layout_marginStart="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_bg_orange"

@@ -1,9 +1,11 @@
 package com.financiat.upb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,10 +16,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AgregarGasto extends AppCompatActivity {
 
-    EditText nombre_gasto;
-    EditText vlr_gasto;
-    EditText fecha_gasto;
-    Button btn_agregar_gasto;
+    private EditText nombre_gasto;
+    private EditText vlr_gasto;
+    private EditText fecha_gasto;
+    private Button btn_agregar_gasto;
+    private ImageView btn_volver_home;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +37,24 @@ public class AgregarGasto extends AppCompatActivity {
         nombre_gasto = findViewById(R.id.input_nombre_gasto);
         vlr_gasto = findViewById(R.id.input_vlr_gasto);
         fecha_gasto  = findViewById(R.id.input_fecha_gasto);
+
         btn_agregar_gasto = findViewById(R.id.btn_agregar_gasto);
+        btn_volver_home = findViewById(R.id.btn_volver_home);
 
 
         btn_agregar_gasto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(AgregarIngreso.this, "Nombre: "+ nombre_gasto.getText().toString() + "vlr ingreso: " + vlr_gasto.getText().toString(), Toast.LENGTH_SHORT).show();
-//            }
+           @Override
+           public void onClick(View v) {
+                Toast.makeText(AgregarGasto.this, "Nombre: "+ nombre_gasto.getText().toString() + "vlr ingreso: " + vlr_gasto.getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_volver_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent siguiente = new Intent(AgregarGasto.this, MainActivity.class);
+                startActivity(siguiente);
+            }
         });
     }
 

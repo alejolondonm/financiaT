@@ -1,9 +1,11 @@
 package com.financiat.upb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,10 +16,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AgregarIngreso extends AppCompatActivity {
 
-    EditText nombre_ingreso;
-    EditText vlr_ingreso;
-    EditText fecha_ingreso;
-    Button btn_ingresar;
+    private EditText nombre_ingreso;
+    private EditText vlr_ingreso;
+    private EditText fecha_ingreso;
+    private Button btn_agregar_ingreso;
+    private ImageView btn_volver_home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +36,22 @@ public class AgregarIngreso extends AppCompatActivity {
         nombre_ingreso = findViewById(R.id.input_nombre_ingreso);
         vlr_ingreso = findViewById(R.id.input_vlr_ingreso);
         fecha_ingreso  = findViewById(R.id.input_fecha_ingreso);
-        btn_ingresar = findViewById(R.id.btn_agregar_ingreso);
 
+        btn_agregar_ingreso = findViewById(R.id.btn_agregar_ingreso);
+        btn_volver_home = findViewById(R.id.btn_volver_home);
 
-    btn_ingresar.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(AgregarIngreso.this, "Nombre: "+ nombre_ingreso.getText().toString() + "vlr ingreso: " + vlr_ingreso.getText().toString(), Toast.LENGTH_SHORT).show();
-        }
-    });
+        btn_agregar_ingreso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AgregarIngreso.this, "Nombre: "+ nombre_ingreso.getText().toString() + "vlr ingreso: " + vlr_ingreso.getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn_volver_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent siguiente = new Intent(AgregarIngreso.this, MainActivity.class);
+                startActivity(siguiente);
+            }
+        });
     }
 }
