@@ -14,6 +14,12 @@
         android:theme="@style/Theme.FinanciaT"
         tools:targetApi="31">
         <activity
+            android:name=".ListaIngresos2"
+            android:exported="false" />
+        <activity
+            android:name=".ListaIngresos"
+            android:exported="false" />
+        <activity
             android:name=".AgregarIngreso"
             android:exported="false" />
         <activity
@@ -30,7 +36,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
