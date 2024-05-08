@@ -169,8 +169,8 @@
 
                 <Button
                     android:id="@+id/btn_agregar_ingreso"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="360dp"
+                    android:layout_height="65dp"
                     android:backgroundTint="#FF9800"
                     android:text="Agregar Ingreso"
                     app:layout_constraintBottom_toBottomOf="parent"

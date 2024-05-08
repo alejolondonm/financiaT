@@ -3,6 +3,7 @@ package com.financiat.upb;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -20,6 +21,8 @@ public class ListaIngresos extends AppCompatActivity {
     private CustomListAdapter adaptador;
     private ImageView btn_volver_home_lista;
     private Datos datos;
+
+    private Button btn_ir_agregar_ingreso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +34,10 @@ public class ListaIngresos extends AppCompatActivity {
             return insets;
         });
         listViewTransacciones = findViewById(R.id.list_view_transacciones);
+        btn_ir_agregar_ingreso = findViewById(R.id.btn_ir_agregar_ingreso);
+        datos = (Datos) getApplication();
 
-       datos = (Datos) getApplication();
 
-        datos.addIngreso(new Transaccion("Sueldo", 100000,2));
-        datos.addIngreso(new Transaccion("Inversiones", 200000,4));
         ArrayList<Transaccion> listaTransacciones = datos.getListaIngresos();
 
         adaptador = new CustomListAdapter(this, R.layout.list_item, R.id.texto_nombre, listaTransacciones);
@@ -48,6 +50,14 @@ public class ListaIngresos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent siguiente = new Intent(ListaIngresos.this, MainActivity.class);
+                startActivity(siguiente);
+            }
+        });
+
+        btn_ir_agregar_ingreso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent siguiente = new Intent(ListaIngresos.this, AgregarIngreso.class);
                 startActivity(siguiente);
             }
         });

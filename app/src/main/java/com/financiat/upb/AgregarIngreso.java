@@ -21,7 +21,7 @@ public class AgregarIngreso extends AppCompatActivity {
     private EditText fecha_ingreso;
     private Button btn_agregar_ingreso;
     private ImageView btn_volver_home;
-
+private Datos datos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,17 +39,22 @@ public class AgregarIngreso extends AppCompatActivity {
 
         btn_agregar_ingreso = findViewById(R.id.btn_agregar_ingreso);
         btn_volver_home = findViewById(R.id.btn_volver_home);
-
+        datos = (Datos)getApplication();
         btn_agregar_ingreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AgregarIngreso.this, "Nombre: "+ nombre_ingreso.getText().toString() + "vlr ingreso: " + vlr_ingreso.getText().toString(), Toast.LENGTH_SHORT).show();
+                double valorIngreso = Double.parseDouble(vlr_ingreso.getText().toString());
+                int fechaIngreso = Integer.parseInt(fecha_ingreso.getText().toString());
+                datos.addIngreso(new Transaccion(nombre_ingreso.getText().toString(), valorIngreso, fechaIngreso));
+
+                Intent siguiente = new Intent(AgregarIngreso.this, ListaIngresos.class);
+                startActivity(siguiente);
             }
         });
         btn_volver_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent siguiente = new Intent(AgregarIngreso.this, MainActivity.class);
+                Intent siguiente = new Intent(AgregarIngreso.this, ListaIngresos.class);
                 startActivity(siguiente);
             }
         });

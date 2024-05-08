@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         txt_ingresos = findViewById(R.id.txt_ingresos);
         txt_gastos = findViewById(R.id.txt_gastos);
 
-        txt_ingresos.setText(datos.getIngresos());
-        txt_gastos.setText(datos.getGastos());
+        txt_ingresos.setText(String.valueOf(datos.getIngresos()));
+        txt_gastos.setText(String.valueOf(datos.getGastos()));
         btn_ir_creditos = findViewById(R.id.btn_ir_creditos);
         btn_ir_ingresos =  findViewById(R.id.btn_ir_ingresos);
         btn_ir_gastos = findViewById(R.id.btn_ir_gastos);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         btn_ir_ingresos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent siguiente = new Intent(MainActivity.this, AgregarIngreso.class);
+                Intent siguiente = new Intent(MainActivity.this, ListaIngresos.class);
                 startActivity(siguiente);
             }
         });

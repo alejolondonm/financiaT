@@ -7,28 +7,29 @@ import java.util.ArrayList;
 public class Datos extends Application {
     private ArrayList<Transaccion> listaIngresos = new ArrayList<>();
 
-    private String ingresos = "$10.000";
-    private String gastos = "$20.000";
+    private double ingresos = 0;
+    private double gastos = 0;
 
     public ArrayList<Transaccion> getListaIngresos() {
         return listaIngresos;
     }
     public void addIngreso(Transaccion ingreso){
+        ingresos += ingreso.getValor();
         listaIngresos.add(ingreso);
     }
-    public String getGastos() {
+    public double getGastos() {
         return gastos;
     }
 
-    public void setGastos(String gastos) {
+    public void setGastos(double gastos) {
         this.gastos = gastos;
     }
 
-    public String getIngresos() {
+    public double getIngresos() {
         return ingresos;
     }
 
-    public void setIngresos(String ingresos) {
+    public void setIngresos(double ingresos) {
         this.ingresos = ingresos;
     }
 }
