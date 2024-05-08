@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btn_ir_creditos;
     private ConstraintLayout btn_ir_ingresos;
+    private ConstraintLayout btn_ir_gastos;
     private Datos datos;
 
     private TextView txt_ingresos;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         txt_gastos.setText(datos.getGastos());
         btn_ir_creditos = findViewById(R.id.btn_ir_creditos);
         btn_ir_ingresos =  findViewById(R.id.btn_ir_ingresos);
+        btn_ir_gastos = findViewById(R.id.btn_ir_gastos);
         btn_ir_creditos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent siguiente = new Intent(MainActivity.this, AgregarIngreso.class);
+                startActivity(siguiente);
+            }
+        });
+
+        btn_ir_gastos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent siguiente = new Intent(MainActivity.this, AgregarGasto.class);
                 startActivity(siguiente);
             }
         });
