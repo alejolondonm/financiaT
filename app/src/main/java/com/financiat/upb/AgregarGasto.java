@@ -28,18 +28,19 @@ public class AgregarGasto extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        nombre_gasto = findViewById(R.id.input_nombre_gasto);
+        vlr_gasto = findViewById(R.id.input_vlr_gasto);
+        fecha_gasto  = findViewById(R.id.input_fecha_gasto);
+        btn_agregar_gasto = findViewById(R.id.btn_agregar_gasto);
+
+
+        btn_agregar_gasto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(AgregarIngreso.this, "Nombre: "+ nombre_gasto.getText().toString() + "vlr ingreso: " + vlr_gasto.getText().toString(), Toast.LENGTH_SHORT).show();
+//            }
+        });
     }
-    nombre_gasto = findViewById(R.id.input_nombre_gasto);
-    vlr_gasto = findViewById(R.id.input_vlr_ingreso);
-    fecha_gasto  = findViewById(R.id.input_fecha_ingreso);
-    btn_agregar_gasto = findViewById(R.id.btn_agregar_ingreso);
 
-
-    btn_agregar_gasto.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(AgregarIngreso.this, "Nombre: "+ nombre_gasto.getText().toString() + "vlr ingreso: " + vlr_gasto.getText().toString(), Toast.LENGTH_SHORT).show();
-        }
-    });
-}
 }
