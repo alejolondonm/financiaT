@@ -24,24 +24,25 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="727dp"
 
 
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="850dp"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <ListView
                 android:id="@+id/list_view_gastos"
                 android:layout_width="match_parent"
-                android:layout_height="619dp"
+                android:layout_height="695dp"
                 android:layout_marginHorizontal="20dp" />
 
             <Button
