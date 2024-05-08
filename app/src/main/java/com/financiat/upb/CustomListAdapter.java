@@ -10,11 +10,11 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 public class CustomListAdapter extends ArrayAdapter<Transaccion> {
-    private Datos datos;
+    private ArrayList<Transaccion> lista;
 
     public CustomListAdapter(Context context, int resource, int textViewResourceId, ArrayList<Transaccion> objects) {
         super(context, resource, textViewResourceId, objects);
-        datos = (Datos) context.getApplicationContext();
+        lista = objects;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CustomListAdapter extends ArrayAdapter<Transaccion> {
         TextView texto_valor = row.findViewById(R.id.texto_valor);
         Button btn_dia = row.findViewById(R.id.button_dia);
 
-        ArrayList<Transaccion> transacciones = datos.getListaIngresos();
+        ArrayList<Transaccion> transacciones = lista;
         if (transacciones != null && position < transacciones.size()) {
             texto_nombre.setText(transacciones.get(position).getNombre());
             texto_valor.setText(String.valueOf(transacciones.get(position).getValor()));

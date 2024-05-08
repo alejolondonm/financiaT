@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         datos = (Datos) this.getApplication();
         txt_ingresos = findViewById(R.id.txt_ingresos);
         txt_gastos = findViewById(R.id.txt_gastos);
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btn_ir_gastos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent siguiente = new Intent(MainActivity.this, AgregarGasto.class);
+                Intent siguiente = new Intent(MainActivity.this, ListaGastos.class);
                 startActivity(siguiente);
             }
         });

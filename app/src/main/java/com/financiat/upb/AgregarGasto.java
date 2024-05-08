@@ -22,7 +22,7 @@ public class AgregarGasto extends AppCompatActivity {
     private Button btn_agregar_gasto;
     private ImageView btn_volver_home;
 
-
+    private Datos datos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +40,16 @@ public class AgregarGasto extends AppCompatActivity {
 
         btn_agregar_gasto = findViewById(R.id.btn_agregar_gasto);
         btn_volver_home = findViewById(R.id.btn_volver_home);
-
-
+        datos = (Datos)getApplication();
         btn_agregar_gasto.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-                Toast.makeText(AgregarGasto.this, "Nombre: "+ nombre_gasto.getText().toString() + "vlr ingreso: " + vlr_gasto.getText().toString(), Toast.LENGTH_SHORT).show();
+            @Override
+            public void onClick(View v) {
+                double valorGasto = Double.parseDouble(vlr_gasto.getText().toString());
+                int fechaGasto = Integer.parseInt(fecha_gasto.getText().toString());
+                datos.addGasto(new Transaccion(nombre_gasto.getText().toString(), valorGasto, fechaGasto));
+
+                Intent siguiente = new Intent(AgregarGasto.this, ListaGastos.class);
+                startActivity(siguiente);
             }
         });
 

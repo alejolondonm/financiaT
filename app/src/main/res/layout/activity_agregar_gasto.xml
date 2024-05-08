@@ -166,8 +166,10 @@
 
                 <Button
                     android:id="@+id/btn_agregar_gasto"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="360dp"
+                    android:layout_height="65dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
                     android:backgroundTint="#FF9800"
                     android:text="Agregar Gasto"
                     app:layout_constraintBottom_toBottomOf="parent"
