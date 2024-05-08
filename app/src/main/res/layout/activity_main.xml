@@ -42,9 +42,10 @@
         android:orientation="horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/frameLayout"
+            android:id="@+id/btn_ir_ingresos"
             android:layout_width="80dp"
             android:layout_height="120dp"
+            android:onClick="@{handleFrameClick}"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_bg_red"
