@@ -53,7 +53,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textoNombreIngreso"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:text="Elaborado por"
