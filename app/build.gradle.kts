@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.financiat.upb"
-        minSdk = 32
+        minSdk = 31
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

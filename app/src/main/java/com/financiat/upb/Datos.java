@@ -2,6 +2,7 @@ package com.financiat.upb;
 
 import android.app.Application;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Datos extends Application {
@@ -27,16 +28,18 @@ public class Datos extends Application {
         gastos += gasto.getValor();
         listaGastos.add(gasto);
     }
-    public double getGastos() {
-        return gastos;
+    public String getGastos() {
+        DecimalFormat formatoSinDecimales = new DecimalFormat("#,###");
+        return "$" + formatoSinDecimales.format(gastos);
     }
 
     public void setGastos(double gastos) {
         this.gastos = gastos;
     }
 
-    public double getIngresos() {
-        return ingresos;
+    public String getIngresos() {
+        DecimalFormat formatoSinDecimales = new DecimalFormat("#,###");
+        return "$" + formatoSinDecimales.format(ingresos);
     }
 
     public void setIngresos(double ingresos) {

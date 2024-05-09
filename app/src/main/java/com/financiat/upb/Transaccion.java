@@ -1,5 +1,9 @@
 package com.financiat.upb;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Transaccion {
 
     private String nombre;
@@ -20,8 +24,15 @@ private int dia;
     public void setDia(int dia) {
         this.dia = dia;
     }
+
     public double getValor() {
         return valor;
+    }
+
+    public String getValorFormateado() {
+        DecimalFormat formatoSinDecimales = new DecimalFormat("#,###");
+        // Formatear el valor como una cantidad de dinero sin decimales
+        return "$" + formatoSinDecimales.format(valor);
     }
 
     public void setValor(double valor) {

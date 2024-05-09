@@ -29,7 +29,7 @@ public class CustomListAdapter extends ArrayAdapter<Transaccion> {
         ArrayList<Transaccion> transacciones = lista;
         if (transacciones != null && position < transacciones.size()) {
             texto_nombre.setText(transacciones.get(position).getNombre());
-            texto_valor.setText(String.valueOf(transacciones.get(position).getValor()));
+            texto_valor.setText(transacciones.get(position).getValorFormateado());
             btn_dia.setText(String.valueOf(transacciones.get(position).getDia()));
         }
 

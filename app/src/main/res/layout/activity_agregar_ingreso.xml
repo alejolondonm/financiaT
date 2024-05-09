@@ -173,6 +173,8 @@
                     android:layout_height="65dp"
                     android:backgroundTint="#FF9800"
                     android:text="Agregar Ingreso"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -14,6 +14,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_ir_creditos;
@@ -39,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         txt_ingresos = findViewById(R.id.txt_ingresos);
         txt_gastos = findViewById(R.id.txt_gastos);
 
-        txt_ingresos.setText(String.valueOf(datos.getIngresos()));
-        txt_gastos.setText(String.valueOf(datos.getGastos()));
+        txt_ingresos.setText(datos.getIngresos());
+        txt_gastos.setText(datos.getGastos());
         btn_ir_creditos = findViewById(R.id.btn_ir_creditos);
         btn_ir_ingresos =  findViewById(R.id.btn_ir_ingresos);
         btn_ir_gastos = findViewById(R.id.btn_ir_gastos);
