@@ -19,6 +19,7 @@ public class Datos extends Application {
     public ArrayList<Transaccion> getListaGastos() {
         return listaGastos;
     }
+
     public void addIngreso(Transaccion ingreso){
         ingresos += ingreso.getValor();
         listaIngresos.add(ingreso);

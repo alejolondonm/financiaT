@@ -10,12 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
+import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class AgregarGasto extends AppCompatActivity {
 
@@ -49,14 +52,45 @@ public class AgregarGasto extends AppCompatActivity {
         btn_agregar_gasto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double valorGasto = Double.parseDouble(vlr_gasto.getText().toString());
-                int fechaGasto = Integer.parseInt(fecha_gasto.getText().toString());
-                datos.addGasto(new Transaccion(nombre_gasto.getText().toString(), valorGasto, fechaGasto));
+                String nombre = nombre_gasto.getText().toString();
+                String valor = vlr_gasto.getText().toString();
+                String fecha = fecha_gasto.getText().toString();
 
+                if (nombre.isEmpty()) {
+                    // Mostrar un mensaje indicando que el campo Nombre de Gasto está vacío
+                    Toast.makeText(AgregarGasto.this, "Por favor ingrese el nombre del gasto", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (valor.isEmpty()) {
+                    // Mostrar un mensaje indicando que el campo Valor de Gasto está vacío
+                    Toast.makeText(AgregarGasto.this, "Por favor ingrese el valor del gasto", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                try {
+                    double valorGasto = Double.parseDouble(valor);
+                } catch (NumberFormatException e) {
+                    // Mostrar un mensaje indicando que el valor ingresado no es válido
+                    Toast.makeText(AgregarGasto.this, "El valor del gasto no es válido", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!isValidDateFormat(fecha)) {
+                    // Mostrar un mensaje indicando que el formato de fecha no es válido
+                    Toast.makeText(AgregarGasto.this, "El formato de la fecha no es válido. Debe ser DD/MM/AAAA", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Si todos los campos tienen valores válidos, agregar el gasto
+                datos.addGasto(new Transaccion(nombre, Double.parseDouble(valor), fecha));
+
+                // Ir a la actividad ListaGastos
                 Intent siguiente = new Intent(AgregarGasto.this, ListaGastos.class);
                 startActivity(siguiente);
             }
         });
+
 
         mainLayout = findViewById(R.id.main);
         mainLayout.setOnTouchListener(new View.OnTouchListener() {
@@ -79,4 +113,17 @@ public class AgregarGasto extends AppCompatActivity {
             }
         });
     }
+    private boolean isValidDateFormat(String date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        dateFormat.setLenient(false);
+        try {
+            dateFormat.parse(date);
+            return true;
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+
 }
+
+

@@ -35,12 +35,58 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_dia"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="80dp"
-        android:layout_height="75dp"
+        android:layout_height="80dp"
         android:layout_weight="1"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp" />
+        android:background="@drawable/date_bg_orange">
+
+        <TextView
+            android:id="@+id/txt_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="4dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="4dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="4dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

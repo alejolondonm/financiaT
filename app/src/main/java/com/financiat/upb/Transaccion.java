@@ -8,21 +8,19 @@ public class Transaccion {
 
     private String nombre;
     private double valor;
-private int dia;
+    private String fecha;
 
-
-
-    public Transaccion(String nombre, double valor, int dia) {
+    public Transaccion(String nombre, double valor, String fecha) {
         this.nombre = nombre;
         this.valor = valor;
-        this.dia = dia;
+        this.fecha = fecha;
     }
-    public int getDia() {
-        return dia;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void setDia(String fecha) {
+        this.fecha = fecha;
     }
 
     public double getValor() {
@@ -31,7 +29,6 @@ private int dia;
 
     public String getValorFormateado() {
         DecimalFormat formatoSinDecimales = new DecimalFormat("#,###");
-        // Formatear el valor como una cantidad de dinero sin decimales
         return "$" + formatoSinDecimales.format(valor);
     }
 
