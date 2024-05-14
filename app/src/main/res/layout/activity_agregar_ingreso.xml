@@ -158,7 +158,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_fecha_ingreso"
                         android:layout_width="344dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:hint="DD/MM/AAAA" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
