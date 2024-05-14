@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AgregarGasto">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -24,21 +24,24 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
         android:layout_width="match_parent"
-        android:layout_height="731dp">
+
+
+        android:layout_height="765dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="782dp"
-            android:clickable="true"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="118dp"
-                android:gravity="bottom|center_vertical"
+                android:layout_height="99dp"
                 android:orientation="vertical" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +57,7 @@
                     android:id="@+id/textoFechaGasto"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
-                    android:text="Nombre del gasto"
+                    android:text="Nombre del Gasto"
                     android:textAlignment="textStart"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -88,7 +91,7 @@
                 tools:layout_editor_absoluteY="112dp">
 
                 <TextView
-                    android:id="@+id/textoFechaGasto"
+                    android:id="@+id/textoVlrGasto"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:text="Valor del gasto"
@@ -109,7 +112,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.43"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textoFechaGasto">
+                    app:layout_constraintTop_toBottomOf="@+id/textoVlrGasto">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_vlr_gasto"
@@ -169,33 +172,29 @@
                     android:id="@+id/btn_agregar_gasto"
                     android:layout_width="360dp"
                     android:layout_height="65dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
                     android:backgroundTint="#FF9800"
-                    android:text="Agregar Gasto"
+                    android:text="Confirmar"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.738" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="345dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar Gastos"
-        android:textAlignment="center"
+        android:text="Agregar Gasto"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="center" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.FinanciaT"
         tools:targetApi="31">
         <activity
+            android:name=".AgregarGasto"
+            android:exported="false" />
+        <activity
             android:name=".ListaGastos"
             android:exported="false" />
         <activity
@@ -24,9 +27,6 @@
             android:exported="false" />
         <activity
             android:name=".AgregarIngreso"
-            android:exported="false" />
-        <activity
-            android:name=".AgregarGasto"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"

@@ -54,7 +54,7 @@
                 tools:layout_editor_absoluteY="112dp">
 
                 <TextView
-                    android:id="@+id/textoFechaGasto"
+                    android:id="@+id/textoNombreIngreso"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:text="Nombre del ingreso"
@@ -74,7 +74,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.43"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textoFechaGasto">
+                    app:layout_constraintTop_toBottomOf="@+id/textoNombreIngreso">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_nombre_ingreso"
@@ -91,7 +91,7 @@
                 tools:layout_editor_absoluteY="112dp">
 
                 <TextView
-                    android:id="@+id/textoFechaGasto"
+                    android:id="@+id/textoVlrIngreso"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:text="Valor del ingreso"
@@ -112,7 +112,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.43"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textoFechaGasto">
+                    app:layout_constraintTop_toBottomOf="@+id/textoVlrIngreso">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_vlr_ingreso"
@@ -132,7 +132,7 @@
                 tools:layout_editor_absoluteY="112dp">
 
                 <TextView
-                    android:id="@+id/textoFechaGasto"
+                    android:id="@+id/textoFechaIngreso"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:text="Fecha"
@@ -153,7 +153,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.43"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textoFechaGasto">
+                    app:layout_constraintTop_toBottomOf="@+id/textoFechaIngreso">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_fecha_ingreso"
@@ -173,7 +173,7 @@
                     android:layout_width="360dp"
                     android:layout_height="65dp"
                     android:backgroundTint="#FF9800"
-                    android:text="Agregar Ingreso"
+                    android:text="Confirmar"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -189,7 +189,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar ingresos"
+        android:text="Agregar ingreso"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
