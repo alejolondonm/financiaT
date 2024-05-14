@@ -1,11 +1,16 @@
 package com.financiat.upb;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AgregarGasto extends AppCompatActivity {
 
+    LinearLayout mainLayout;
     private EditText nombre_gasto;
     private EditText vlr_gasto;
     private EditText fecha_gasto;
@@ -50,6 +56,19 @@ public class AgregarGasto extends AppCompatActivity {
 
                 Intent siguiente = new Intent(AgregarGasto.this, ListaGastos.class);
                 startActivity(siguiente);
+            }
+        });
+
+        mainLayout = findViewById(R.id.main);
+        mainLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                    return true;
+                }
+                return false;
             }
         });
 

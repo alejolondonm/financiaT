@@ -31,7 +31,8 @@
         <LinearLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="782dp"
+            android:clickable="true"
             android:orientation="vertical">
 
             <LinearLayout
@@ -41,7 +42,7 @@
                 android:orientation="vertical" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/LinearLayout"
                 android:layout_width="396dp"
                 android:layout_height="161dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +82,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/LinearLayout"
                 android:layout_width="396dp"
                 android:layout_height="170dp"
                 tools:layout_editor_absoluteY="112dp">
@@ -119,7 +120,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/LinearLayout"
                 android:layout_width="396dp"
                 android:layout_height="115dp"
                 app:layout_constraintEnd_toEndOf="parent"
